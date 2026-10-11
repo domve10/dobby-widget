@@ -5,7 +5,7 @@
   "mood_label": "AL LAVORO",
   "hearts": 3,
   "image": "https://raw.githubusercontent.com/domve10/dobby-widget/main/img/lavoro.png",
-  "message": "Mescolo, assaggio, pubblico. Avanti!",
+  "message": "Dobby lavora, i libri si vendono!",
   "sales_count": 0,
   "sales_goal": 10,
   "last_sale_at": null,
@@ -17,10 +17,10 @@
     "url": "https://www.tiktok.com/@cheflabnotes/video/7695303191927344406",
     "platform": "tiktok",
     "slug": "slideshow-09",
-    "posted_at": "2026-10-11T14:37:00+02:00"
+    "posted_at": "2026-10-11T21:42:00+02:00"
   },
   "posts_today": 7,
   "next_task": "Prepara slideshow-10: Hollandaise is physics",
   "shop_url": "https://www.etsy.com/shop/ChefLabNotes",
-  "updated_at": "2026-10-11T19:23:27+02:00"
+  "updated_at": "2026-10-11T22:22:20+02:00"
 }
