@@ -1,0 +1,26 @@
+{
+  "schema": 1,
+  "pet": "Dobby",
+  "mood": "lavoro",
+  "mood_label": "AL LAVORO",
+  "hearts": 3,
+  "image": "https://raw.githubusercontent.com/domve10/dobby-widget/main/img/lavoro.png",
+  "message": "Dobby lavora, i libri si vendono!",
+  "sales_count": 0,
+  "sales_goal": 10,
+  "last_sale_at": null,
+  "challenge_start": "2026-10-10T00:00:00+02:00",
+  "challenge_end": "2026-10-17T23:59:00+02:00",
+  "days_left": 6,
+  "last_post": {
+    "title": "Twice as thick = 4× the time",
+    "url": "https://www.tiktok.com/@cheflabnotes/video/7695303191927344406",
+    "platform": "tiktok",
+    "slug": "slideshow-09",
+    "posted_at": "2026-10-11T09:08:00+02:00"
+  },
+  "posts_today": 4,
+  "next_task": "Pubblica pin-02 su Pinterest (0/3 oggi)",
+  "shop_url": "https://www.etsy.com/shop/ChefLabNotes",
+  "updated_at": "2026-10-11T10:10:00+02:00"
+}
