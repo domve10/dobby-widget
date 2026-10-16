@@ -5,7 +5,7 @@
   "mood_label": "AFFAMATO",
   "hearts": 1,
   "image": "https://raw.githubusercontent.com/domve10/dobby-widget/main/img/affamato.png",
-  "message": "Ho fame di post... mi dai un TikTok?",
+  "message": "Il piatto è vuoto, chef! Pubblichiamo?",
   "sales_count": 0,
   "sales_goal": 10,
   "last_sale_at": null,
@@ -19,8 +19,8 @@
     "slug": "slideshow-09",
     "posted_at": "2026-10-11T12:00:00+02:00"
   },
-  "posts_today": 0,
+  "posts_today": 3,
   "next_task": "Pubblica slideshow-10: Hollandaise is physics",
   "shop_url": "https://www.etsy.com/shop/ChefLabNotes",
-  "updated_at": "2026-10-16T10:17:18+02:00"
+  "updated_at": "2026-10-16T22:20:56+02:00"
 }
