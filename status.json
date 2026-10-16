@@ -5,13 +5,13 @@
   "mood_label": "AFFAMATO",
   "hearts": 1,
   "image": "https://raw.githubusercontent.com/domve10/dobby-widget/main/img/affamato.png",
-  "message": "Il piatto è vuoto, chef! Pubblichiamo?",
+  "message": "Ho fame di post... mi dai un TikTok?",
   "sales_count": 0,
   "sales_goal": 10,
   "last_sale_at": null,
   "challenge_start": "2026-10-10T00:00:00+02:00",
   "challenge_end": "2026-10-17T23:59:00+02:00",
-  "days_left": 2,
+  "days_left": 1,
   "last_post": {
     "title": "Twice as thick = 4× the time",
     "url": "https://www.tiktok.com/@cheflabnotes/video/7695303191927344406",
@@ -19,8 +19,8 @@
     "slug": "slideshow-09",
     "posted_at": "2026-10-11T12:00:00+02:00"
   },
-  "posts_today": 3,
+  "posts_today": 0,
   "next_task": "Pubblica slideshow-10: Hollandaise is physics",
   "shop_url": "https://www.etsy.com/shop/ChefLabNotes",
-  "updated_at": "2026-10-15T22:20:46+02:00"
+  "updated_at": "2026-10-16T10:17:18+02:00"
 }
