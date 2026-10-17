@@ -5,7 +5,7 @@
   "mood_label": "FELICE",
   "hearts": 4,
   "image": "https://raw.githubusercontent.com/domve10/dobby-widget/main/img/felice.png",
-  "message": "Dobby balla: abbiamo venduto!",
+  "message": "Evviva! Un libro è volato via! 🎉",
   "sales_count": 1,
   "sales_goal": 10,
   "last_sale_at": "2026-10-16T19:30:00+02:00",
@@ -22,5 +22,5 @@
   "posts_today": 0,
   "next_task": "Pubblica pin-06 su Pinterest (0/3 oggi)",
   "shop_url": "https://www.etsy.com/shop/ChefLabNotes",
-  "updated_at": "2026-10-17T08:46:52+02:00"
+  "updated_at": "2026-10-17T10:17:16+02:00"
 }
