@@ -268,12 +268,8 @@ button#send svg{width:26px;height:26px}
  if(PROBLEM){banner.textContent="⚠️ "+PROBLEM;banner.style.display="block";}
  function setStatus(txt,dot){status.innerHTML=(dot?'<span class="dot" style="background:'+dot+';box-shadow:0 0 8px '+dot+'"></span>':"")+txt;}
 
- // ---- ponte con Scriptable ----
- var waiter=null,queued=null,sending=false,keepAlive=null;
- window.__jarvisWait=function(cb){waiter=cb;clearTimeout(keepAlive);
-  if(queued){var q=queued;queued=null;deliver(q);return;}
-  keepAlive=setTimeout(function(){if(waiter){var w=waiter;waiter=null;w({type:"ping"});}},20000);};
- function deliver(payload){if(waiter){var w=waiter;waiter=null;clearTimeout(keepAlive);w(payload);}else{queued=payload;}}
+ // ---- ponte con Scriptable: il tasto Invia apre un indirizzo jarvis:// che Scriptable intercetta ----
+ function deliver(payload){window.location.href="jarvis://send?t="+encodeURIComponent(payload.text);}
 
  function doSend(){if(sending)return;var text=msg.value.trim();
   if(!text){var row=msg.parentNode;row.classList.remove("shake");void row.offsetWidth;row.classList.add("shake");msg.focus();return;}
@@ -299,32 +295,31 @@ button#send svg{width:26px;height:26px}
 
 async function runApp() {
   const wv = new WebView();
-  await wv.loadHTML(buildHTML(configProblem()));
-  let closed = false;
-  const closedP = wv.present(true).then(() => { closed = true; return { type: "closed" }; });
-
-  while (!closed) {
-    let ev;
-    try {
-      ev = await Promise.race([
-        wv.evaluateJavaScript("(function(){var done=completion;window.__jarvisWait(function(v){done(JSON.stringify(v));});})()", true),
-        closedP,
-      ]);
-    } catch (e) {
-      console.error("Ponte WebView: " + e);
-      if (closed) break;
-      await new Promise(r => Timer.schedule(500, false, r));
-      continue;
-    }
-    if (typeof ev === "string") { try { ev = JSON.parse(ev); } catch (e) { ev = null; } }
-    if (!ev || ev.type !== "send") continue; // "ping" o chiusura
-    const text = String(ev.text || "").trim().slice(0, MAX_CHARS);
+  let busy = false;
+  async function handle(text) {
+    text = String(text || "").trim().slice(0, MAX_CHARS);
     const result = text ? await sendMessage(text)
                         : { ok: false, title: "Messaggio vuoto", msg: "Scrivi qualcosa prima di inviare." };
-    if (closed) break;
     try { await wv.evaluateJavaScript("window.__jarvisResult(" + JSON.stringify(result) + ")"); }
     catch (e) { console.error("Risultato non mostrato: " + e); }
+    busy = false;
   }
+  wv.shouldAllowRequest = (req) => {
+    const u = String((req && req.url) || "");
+    if (!/^jarvis:/i.test(u)) return true;
+    if (!busy) {
+      busy = true;
+      let text = "";
+      try { const m = u.match(/[?&]t=([^&]*)/); text = m ? decodeURIComponent(m[1]) : ""; } catch (e) {}
+      handle(text);
+    }
+    return false;
+  };
+  // prima mostra la finestra, poi carica la pagina (evita la schermata bianca)
+  const shown = wv.present(true);
+  await new Promise(r => Timer.schedule(250, false, r));
+  await wv.loadHTML(buildHTML(configProblem()));
+  await shown;
 }
 
 // ---------- avvio ----------
