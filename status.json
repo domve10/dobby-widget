@@ -5,7 +5,7 @@
   "mood_label": "AFFAMATO",
   "hearts": 1,
   "image": "https://raw.githubusercontent.com/domve10/dobby-widget/main/img/affamato.png",
-  "message": "Brontola la pancia: niente post da ore!",
+  "message": "Il piatto è vuoto, chef! Pubblichiamo?",
   "sales_count": 1,
   "sales_goal": 10,
   "last_sale_at": "2026-10-16T19:30:00+02:00",
@@ -22,5 +22,5 @@
   "posts_today": 0,
   "next_task": "Pubblica slideshow-10: Hollandaise is physics",
   "shop_url": "https://www.etsy.com/shop/ChefLabNotes",
-  "updated_at": "2026-10-29T21:19:56+01:00"
+  "updated_at": "2026-10-30T09:21:41+01:00"
 }
